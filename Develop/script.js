@@ -57,19 +57,20 @@ function generatePassword() {
 
   // Confirming the rest, 'YES' or 'NO' ('OK' or 'Cancel')
 
-  var confirmUpperCase = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmLowerCase = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmSpecialChar = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmNumbers = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  var confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  var confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  var confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  var confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
 
   // Oopsies for the above confirmations
 
     while(confirmUpperCase === false && confirmLowerCase=== false && confirmSpecialChar === false && confirmNumbers === false){
       alert("Please select at least one");
-      var confirmUpperCase = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmLowerCase = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmSpecialChar = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmNumbers = confirm("Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+
+      var confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      var confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      var confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      var confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
     }
 
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -98,9 +99,9 @@ function generatePassword() {
 
 // Present the password (in the same input box)
 
-function presentPassword() {
+function writePassword() {
   var passwordEthos = generatePassword();
-  var presentedPW = document.querySelector(#password);
+  var presentedPW = document.querySelector('#password');
 
   presentedPW.value = passwordEthos;
   
