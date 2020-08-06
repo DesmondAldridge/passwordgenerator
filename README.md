@@ -15,6 +15,4 @@ Admittedly I needed help getting started on this one and throughout. If it's not
 
 I looked at several examples, and the steps I took reflect that. I rewrote (sometimes modified) each step if I decided to go with that same approach (which was for most steps), but didn't move on from each step (or even decide to use that step) until I understood it.
 
-Really I was so informed by the examples I viewed that it was stressing me out that this bordered on plagarism, but I really needed my handheld for this one as Javascript in general is still very alien to me.
-
-I did learn (and reinforce what I've previously learned) a lot from this assignment, and I really hope moving forward I won't need to reference as many examples/precedents.
+Really I didn't like how much I was so informed by the examples/precedents, but I really needed my handheld for this one as Javascript in general is still very alien to me. The positive aspect to that is that I did learn (and reinforce what I've previously learned) a lot from this assignment by reviewing those multiple approaches and subsequent syntax of those approaches.
