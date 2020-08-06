@@ -24,9 +24,9 @@ var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
 var specialChar = ['!','@','#','$','%','^','&','*'];
 var numbers = ['1','2','3','4','5','6','7','8','9','0'];
 
-// Confirming those choices
+// Confirmation of those choices
 
-var confirmLength;
+var confirmLength = [];
 var confirmUpperCase;
 var confirmLowerCase;
 var confirmSpecialChar;
