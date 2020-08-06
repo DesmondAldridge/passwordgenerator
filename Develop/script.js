@@ -18,7 +18,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Choices
 
-var length = [0];
+var length = [];
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var specialChar = ['!','@','#','$','%','^','&','*'];
@@ -41,36 +41,36 @@ function generatePassword() {
 
   // Confirming the number of characters
 
-  var confirmLength = (prompt('How long would you like your password to be?'));
+  confirmLength = (prompt('How long would you like your password to be?'));
 
   // Oopsies for the above confirmation
 
     while(confirmLength <= 7) {
       alert("Password must contain at least 8 characters");
-      var confirmLength = (prompt("How many characters would you like your password to contain?"));
+      confirmLength = (prompt("How many characters would you like your password to contain?"));
     }
     
     while(confirmLength >= 127) {
       alert("Password must not exceed 128 characters");
-      var confirmLength = (prompt("How many characters would you like your password to contain?"));
+      confirmLength = (prompt("How many characters would you like your password to contain?"));
     }
 
   // Confirming the rest, 'YES' or 'NO' ('OK' or 'Cancel')
 
-  var confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-  var confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+  confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
 
   // Oopsies for the above confirmations
 
     while(confirmUpperCase === false && confirmLowerCase=== false && confirmSpecialChar === false && confirmNumbers === false){
       alert("Please select at least one");
 
-      var confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
-      var confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      confirmUpperCase = confirm("Would you like to include uppercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      confirmLowerCase = confirm("Would you like to include lowercase letters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      confirmSpecialChar = confirm("Would you like to include special characters? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
+      confirmNumbers = confirm("Would you like to include numerals? Click 'OK' for 'YES' and 'Cancel' for 'NO'");
     }
 
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -80,19 +80,34 @@ function generatePassword() {
 
   var passwordAssets = [];
 
-  if(confirmUpperCase && confirmLowerCase && confirmSpecialChar && confirmNumbers){
-    passwordAssets = passwordAssets.concat(confirmUpperCase) + passwordAssets.concat(confirmLowerCase) + passwordAssets.concat(confirmSpecialChar) + passwordAssets.concat(confirmNumbers);
+  if(confirmUpperCase) {
+    passwordAssets.push(...upperCase);
   }
+
+  if(confirmLowerCase) {
+    passwordAssets.push(...lowerCase);
+  }
+
+  if(confirmSpecialChar) {
+    passwordAssets.push(...specialChar);
+  }
+
+  if(confirmNumbers) {
+    passwordAssets.push(...numbers);
+  }
+
 
   var thePassword = ' ';
 
   for(var i = 0; i < confirmLength; i++) {
-    thePassword = passwordAssets[Math.floor(Math.random() * passwordAssets.length)];
+    //thePassword = thePassword + passwordAssets***
+    thePassword += passwordAssets[Math.floor(Math.random() * passwordAssets.length)];
   }
 
   return thePassword;
 
 }
+
 
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
